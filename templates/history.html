@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Name</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Share Price</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for stock in stocks %}
+
+        {% if stock["type"] == "Bought" %}
+        <tr class="table-danger">
+        {% elif stock["type"] == "Sold" %}
+        <tr class="table-success">
+        {% endif %}
+            <th>{{ stock["symbol"]}}</th>
+            <th>{{ stock["name"]}}</th>
+            <th>{{ stock["shares"]}}</th>
+            <th>{{ stock["price"]}}</th>
+            <th>{{ stock["total"]}}</th>
+            <th>{{ stock["date"]}}</th>
+            <th>{{ stock["type"]}}</th>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}

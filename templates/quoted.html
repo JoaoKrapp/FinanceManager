@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <div class="card bg-light" style="margin: 0px 315px;">
+        <h5 class="card-header">{{ name }}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{ primaryExchange }} : {{ symbol }}</h5>
+            <p class="card-text">Price {{ currency }} {{ price }}</p>
+        </div>
+    </div>
+
+    <!-- <h2>Quoted</h2>
+    <h4>Name: {{ name }}</h4>
+    <h4>Price: {{ price }}</h4>
+    <h4>Symbol: {{ symbol }}</h4>
+    <h4>Primary Exchange: {{ primaryExchange }}</h4> -->
+{% endblock %}
